@@ -23,10 +23,15 @@
 
 --3. Show all customers names who have made payments over $175(use subqueries)
 
---ANSWER: I STRUGGLED WITH THIS ONE
---SELECT customer_id, first_name, last_name, SUM(payment.amount)
---FROM (SELECT payment.payment_id, payment.customer_id, payment.amount FROM payment)
---GROUP BY customer_id HAVING SUM(payment.amount) > 175
+--ANSWER: I STRUGGLED WITH THIS ONE - MY BOY PETER
+--SELECT first_name, last_name
+--FROM customer
+--WHERE customer_id IN(
+    --SELECT customer_id
+    --FROM payment
+    --GROUP BY customer_id
+    --HAVING SUM(amount) > 175.00
+    --ORDER BY SUM(amount));
 
 --4. List all customers that live in Nepal (use the city table)
 
